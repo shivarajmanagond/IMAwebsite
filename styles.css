@@ -1851,3 +1851,241 @@ body {
   font-size: 0.8125rem;
   color: #64748b;
 }
+
+
+/* ================================================================
+   IMA ENHANCEMENTS — single clean block, no duplicates
+   ================================================================ */
+
+/* ── Sticky header shadow ── */
+.site-header.is-scrolled {
+  box-shadow: 0 2px 20px rgba(0,0,0,0.20);
+  transition: box-shadow 0.25s ease;
+}
+
+/* ── Active nav link ── */
+.site-nav a.is-active {
+  color: var(--col-accent, #f5a623);
+  font-weight: 600;
+}
+
+/* ── Scroll-reveal ── */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+}
+[data-reveal]:nth-child(2) { transition-delay: 0.08s; }
+[data-reveal]:nth-child(3) { transition-delay: 0.16s; }
+[data-reveal]:nth-child(4) { transition-delay: 0.24s; }
+[data-reveal]:nth-child(5) { transition-delay: 0.32s; }
+[data-reveal]:nth-child(6) { transition-delay: 0.40s; }
+[data-reveal].is-revealed  { opacity: 1; transform: translateY(0); }
+
+/* ── Contact form extra fields ── */
+.contact-form input[type="text"],
+.contact-form input[type="email"] {
+  display: block;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1.5px solid #d0d8e4;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  margin-bottom: 0.75rem;
+  font-family: inherit;
+  background: #fff;
+  transition: border-color 0.2s;
+  box-sizing: border-box;
+}
+.contact-form input[type="text"]:focus,
+.contact-form input[type="email"]:focus {
+  outline: none;
+  border-color: var(--col-accent, #f5a623);
+}
+#form-status {
+  min-height: 1.4em;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+  font-weight: 500;
+}
+
+/* ── WhatsApp FAB ── */
+.whatsapp-fab {
+  position: fixed;
+  bottom: 1.75rem;
+  right: 1.75rem;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: #25D366;
+  color: #fff;
+  border-radius: 50px;
+  padding: 0.75rem 1.1rem 0.75rem 0.9rem;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  font-family: inherit;
+  box-shadow: 0 4px 20px rgba(37,211,102,0.40);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, max-width 0.3s ease, padding 0.3s ease;
+  overflow: hidden;
+  max-width: 56px;
+}
+.whatsapp-fab:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 28px rgba(37,211,102,0.55);
+  max-width: 220px;
+  padding: 0.75rem 1.25rem 0.75rem 0.9rem;
+}
+.whatsapp-fab svg { flex-shrink: 0; }
+.whatsapp-fab-label {
+  white-space: nowrap;
+  opacity: 0;
+  max-width: 0;
+  overflow: hidden;
+  transition: opacity 0.25s ease 0.05s, max-width 0.3s ease;
+}
+.whatsapp-fab:hover .whatsapp-fab-label { opacity: 1; max-width: 140px; }
+@media (max-width: 480px) {
+  .whatsapp-fab { bottom: 1rem; right: 1rem; max-width: 52px; padding: 0.7rem; }
+  .whatsapp-fab-label { display: none; }
+}
+
+/* ── Stats / Metrics numbers ── */
+.metric-number {
+  display: block;
+  font-size: 2.6rem;
+  font-weight: 700;
+  font-family: 'Outfit', sans-serif;
+  color: var(--col-accent, #f5a623);
+  line-height: 1;
+  margin-bottom: 0.4rem;
+}
+.metric-icon { display: none; }
+
+/* ── Why Automate section ── */
+.why-automate { background: #f4f7fb; }
+.automate-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+@media (max-width: 900px) { .automate-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .automate-grid { grid-template-columns: 1fr; } }
+
+.automate-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 1.75rem 1.5rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  border-top: 3px solid var(--col-accent, #f5a623);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.automate-card:hover { transform: translateY(-3px); box-shadow: 0 6px 24px rgba(0,0,0,0.11); }
+.automate-card-icon { color: var(--col-accent, #f5a623); margin-bottom: 1rem; }
+.automate-card h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--col-heading, #0b2b49); }
+.automate-card p  { font-size: 0.92rem; line-height: 1.65; color: var(--col-body, #3a4a5c); margin: 0; }
+
+/* ── Technology Partners strip ── */
+.partners-strip {
+  background: #0b2b49;
+  color: #fff;
+}
+.partners-strip .section-kicker { color: rgba(255,255,255,0.65); }
+.partners-strip .section-title  { color: #fff; }
+.partners-strip .section-intro  { color: rgba(255,255,255,0.82); }
+
+.partners-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1.25rem;
+  margin-top: 2.5rem;
+  align-items: stretch;
+}
+@media (max-width: 1000px) { .partners-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 560px)  { .partners-grid { grid-template-columns: repeat(2, 1fr); } }
+
+/* Single clean partner-badge definition */
+.partner-badge {
+  display: flex;
+  align-items: stretch;
+}
+
+.partner-logo-wrap {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 1rem 0.75rem;
+  min-height: 80px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  overflow: hidden;
+}
+.partner-logo-wrap:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+}
+
+/* Actual logo images — fill the card clearly */
+.partner-logo-wrap img {
+  display: block;
+  width: 100%;
+  height: 70px;
+  object-fit: contain;
+  object-position: center;
+}
+
+/* Dark background variant for light-coloured logos (e.g. Mitsubishi black) */
+.partner-logo-wrap--dark { background: #111111; }
+
+/* ── FAQ Section ── */
+.faq-list {
+  margin-top: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.faq-item {
+  border: 1.5px solid #dde4ef;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #fff;
+  transition: border-color 0.2s;
+}
+.faq-item[open] { border-color: var(--col-accent, #f5a623); }
+.faq-question {
+  cursor: pointer;
+  padding: 1.1rem 1.25rem;
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--col-heading, #0b2b49);
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  user-select: none;
+}
+.faq-question::-webkit-details-marker { display: none; }
+.faq-question::after {
+  content: '+';
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: var(--col-accent, #f5a623);
+  flex-shrink: 0;
+}
+.faq-item[open] .faq-question::after { content: '−'; }
+.faq-answer {
+  padding: 0 1.25rem 1.1rem;
+  border-top: 1px solid #eef1f6;
+}
+.faq-answer p {
+  margin: 0.75rem 0 0;
+  font-size: 0.93rem;
+  line-height: 1.7;
+  color: var(--col-body, #3a4a5c);
+}
